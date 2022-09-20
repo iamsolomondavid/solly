@@ -47,7 +47,7 @@ export default function Home() {
       <header>
         <div className={home.headerHeader}>
           <div></div>
-          <h1>HELLO. <br/> I'M SOLOMON DAVID</h1>
+          <h1>HELLO. <br/> I&apos;M SOLOMON DAVID</h1>
         </div>
         <div className={home.headerBody}>
           <p>a Frontend Web Developer, UI designer
@@ -68,7 +68,7 @@ export default function Home() {
           <div className={home.resumeWrapper}>
             <div className={home.resumeHeader}>
               <div></div>
-              <h2>RESUME'</h2>
+              <h2>RESUME&apos;</h2>
             </div>
             <div className={home.resumeBody}>
               <div className={home.education}>
@@ -134,7 +134,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={home.resumeDownload}>DOWNLOAD RESUME' <FontAwesomeIcon className={home.arrowLong} icon="fa-solid fa-right-long" /></div>
+            <div className={home.resumeDownload}>DOWNLOAD RESUME&apos; <FontAwesomeIcon className={home.arrowLong} icon="fa-solid fa-right-long" /></div>
           </div>
         </section>
         {/* WORKS */}
