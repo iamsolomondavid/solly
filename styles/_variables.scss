@@ -1,0 +1,22 @@
+$colors: (
+    primary-1: #DFDFDD,
+    primary-2: #202020,
+    primary-3: #F4F5F7, 
+    accent: #23345C,
+    secondary-1: #E7C21C,
+    secondary-2: #EC685C,
+    secondary-3: #36B7C9,
+);
+
+$fonts: (
+    primary: 'Poppins',
+    secondary: 'Quicksand'
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+@function font($font-name) {
+    @return map-get($fonts, $font-name);
+}

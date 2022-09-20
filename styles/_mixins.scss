@@ -1,0 +1,24 @@
+@mixin flexStyle($Direction, $Justify-content, $align-items) {
+	display: flex;
+	flex-flow: $Direction;
+	justify-content: $Justify-content;
+	align-items: $align-items;
+	align-content: center;
+}
+
+@mixin container($Container-width) {
+	width: $Container-width;
+	margin: 0 auto;
+}
+
+@mixin desktop {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin pad {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
