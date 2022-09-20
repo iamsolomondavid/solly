@@ -47,7 +47,7 @@ export default function Home() {
       <header>
         <div className={home.headerHeader}>
           <div></div>
-          <h1>HELLO. <br/> I&apos;M SOLOMON DAVID</h1>
+          <h1>HELLO. <br/> I&apos;M SOLOMON<br/> DAVID</h1>
         </div>
         <div className={home.headerBody}>
           <p>a Frontend Web Developer, UI designer
