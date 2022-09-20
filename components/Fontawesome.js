@@ -6,11 +6,15 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false; /* eslint-disable import/first */
 
 // import your icons
+import { faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
-import { faArrowRight, faRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faRightLong, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 
 library.add(
+  faEnvelope,
+  faWhatsapp,
+  faTwitter,
   faCopyright,
   faArrowRight,
   faRightLong

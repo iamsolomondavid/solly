@@ -1,6 +1,7 @@
 // Import next components
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 // Import stylesheets
 import home from '../styles/Home.module.scss'
@@ -174,7 +175,44 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section></section>
+        {/* CONTACT */}
+        <section className={home.contact}>
+          <div className={home.contactWrapper}>
+            <div className={home.contactHeader}>
+              <div></div>
+              <h2>CONTACT ME</h2>
+            </div>
+            <div className={home.contactBody}>
+              <h4><b>x</b> &nbsp; <span>LET'S TALK</span></h4>
+              <p>
+              Job offers? You have an idea and  you think i&apos;d be a good part of it? Or you just want to connect? Let&apos;s talk! I&apos;m at a stage in my life where i&apos;m really looking to build my network, build new connections and help build a community (or communities). 
+              </p>
+              <div className={home.handles}>
+                <h6><b>x</b> &nbsp;dm me via:</h6>
+                <span>
+                  <Link href="#">
+                    <a><FontAwesomeIcon icon="fa-brands fa-twitter" /></a>
+                  </Link>
+                  <Link href="#">
+                    <a><FontAwesomeIcon icon="fa-brands fa-whatsapp" /></a>
+                  </Link>
+                  <Link href="#">
+                    <a><FontAwesomeIcon icon="fa-solid fa-envelope" /></a>
+                  </Link>
+                </span>
+              </div>
+              <div className={home.message}>
+                <h6><b>x</b> &nbsp;or send me a line here</h6>
+                <div className={home.messageBox}>
+                  <input type="text" placeholder='Your Name'/>
+                  <input type="text" placeholder='Your Email or Whatsapp'/>
+                  <textarea name="user message" id="" cols="30" rows="5" placeholder='Your Message'></textarea>
+                  <button>SEND</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       

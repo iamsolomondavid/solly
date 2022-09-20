@@ -380,5 +380,136 @@
         }
       }
     }
+    .contact{
+      @extend .resume;
+      margin-top: 4rem;
+      .contactWrapper{
+        @extend .resumeWrapper;
+        .contactHeader{
+          @extend .resumeHeader;
+          div{
+            background-color: color(secondary-1);
+          }
+        }
+        .contactBody{
+          @extend .resumeBody;
+          @include flexStyle(column, center, flex-start);
+          h4{
+            @extend .educationHeader;
+            color: color(accent);
+            margin-top: 2em;
+            b{
+              font-family: font(secondary);
+              font-weight: bold;
+              text-align: center;
+            }
+            span{
+              font-size: 0.9rem;
+              font-weight: bold;
+            }
+          }
+          h6{
+            @extend .educationHeader;
+            color: color(accent);
+            margin-top: 2em;
+            b{
+              font-family: font(secondary);
+              font-weight: bold;
+              text-align: center;
+            }
+            span{
+              font-size: 0.9rem;
+              font-weight: bold;
+            }
+          }
+          p{
+            width: 100%;
+            font-size: 0.7rem;
+            word-spacing: 0.1em;
+            font-weight: 600;
+            color: color(accent);
+            padding: 0.8em 0;
+          }
+          .handles{
+            width: 100%;
+            @include flexStyle(column, center, flex-start);
+            span{
+              @include flexStyle(row, space-between, center);
+              width: 100%;
+              padding: 1em 0;
+              a{
+                width: 30%;
+                padding: 0.8em;
+                font-size: 1rem;
+                background-color: #ffffff;
+                @include flexStyle(column, center, center);
+                border-radius: 10px;
+                &:nth-child(1){
+                  color: #36B7C9;
+                }
+                &:nth-child(2){
+                  color: #34B034;
+                }
+                &:nth-child(3){
+                  color: color(accent);
+                }
+              }
+            }
+          }
+          .message{
+            width: 100%;
+            h6{
+              position: relative;
+              width: fit-content;
+              &::after{
+                content: '';
+                width: 1.2rem;
+                height: 1rem;
+                border: 2px solid color(accent);
+                border-left: none;
+                border-bottom: none;
+                border-radius: 50%;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: 0;
+                position: absolute;
+                top: 38%;
+                right: -1.8rem;
+              }
+            }
+            .messageBox{
+              padding: 1em 0;
+              width: 100%;
+              input{
+                margin: 1em 0;
+                padding: 1em;
+                font-family: font(secondary);
+                width: 100%;
+                border: none;
+                border-radius: 10px;
+              }
+              textarea{
+                margin: 1em 0;
+                padding: 1em;
+                font-family: font(secondary);
+                width: 100%;
+                border: none;
+                border-radius: 10px;
+                resize: none;
+              }
+              button{
+                padding: 1em;
+                font-family: font(secondary);
+                width: 100%;
+                border: none;
+                border-radius: 10px;
+                background-color: color(secondary-1);
+                color: color(accent);
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
