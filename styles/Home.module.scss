@@ -75,6 +75,34 @@
     width: 100%;
     padding: 4rem 0 0 0;
     @include flexStyle(column, center, center);
+    
+
+    .navigatorWrapper{
+      @include container(85%);
+      margin: 2rem 0;
+      position: sticky;
+      top: 5vh;
+      z-index: 100;
+      div{
+        padding: 1em;
+        font-weight: bold;
+        @include flexStyle(row, space-between, center);
+        font-size: 0.7rem;
+        border-radius: 15px;
+        background-color: color(primary-3);
+        span{
+          opacity: 0.5;
+          &:nth-child(1){
+            background-color: color(primary-1);
+            padding: 1em;
+            opacity: 1;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+
     .resume{
       width: 100%;
       background-image: url('../public/images/resume.webp');
@@ -108,8 +136,7 @@
         }
         .resumeBody{
           @include flexStyle(column, center, center);
-          @include container(80%);
-          margin-left: 2rem;
+          @include container(85%);
           .education{
             padding: 2rem 0 0 0;
             width: 100%;
@@ -250,7 +277,8 @@
           }
         }
         .resumeDownload{
-          margin-left: 2rem;
+          @include flexStyle(row, flex-start, center);
+          @include container(80%);
           padding: 3rem 0 0 0 ;
           font-size: 0.7rem;
           font-weight: bold;
@@ -262,6 +290,10 @@
           }
         }
       }
+    }
+    .work{
+      height: 100vh;
+      width: 100%;
     }
     .about{
       @extend .resume;
@@ -468,7 +500,7 @@
                 border: 2px solid color(accent);
                 border-left: none;
                 border-bottom: none;
-                border-radius: 50%;
+                border-radius: 100%;
                 border-bottom-right-radius: 0;
                 border-top-left-radius: 0;
                 position: absolute;

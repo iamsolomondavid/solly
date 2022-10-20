@@ -12,7 +12,7 @@ body {
   margin: 0;
   font-family: font(primary);
   background-color: color(primary-1);
-  color: color(primary-2);
+  color: color(accent);
   box-sizing: border-box;
 }
 
@@ -45,6 +45,51 @@ body {
 @keyframes scrollDirection {
   from {top: 0;}
   to {top: 3rem; opacity: 0;}
+}
+
+#resumeBtn {
+  transition: all 0.2s ease-in;
+  &.unselected {
+      opacity: 0.5;
+      background-color: transparent;
+  }
+}
+#worksBtn {
+  transition: all 0.2s ease-in;
+  &.selected {
+    background-color: color(primary-1);
+    padding: 1em;
+    opacity: 1;
+    border-radius: 10px;
+  }
+}
+#aboutBtn{
+  transition: all 0.2s ease-in;
+  &.selected {
+    background-color: color(primary-1);
+    padding: 1em;
+    opacity: 1;
+    border-radius: 10px;
+  }
+}
+#contactBtn{
+  transition: all 0.2s ease-in;
+  &.selected {
+    background-color: color(primary-1);
+    padding: 1em;
+    opacity: 1;
+    border-radius: 10px;
+  }
+}
+
+#about{
+  display: none;
+}
+#work{
+  // display: ;
+}
+#contact{
+  display: none;
 }
 
 

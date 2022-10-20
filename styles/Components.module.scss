@@ -27,6 +27,7 @@
     @include container(90%);
     @include flexStyle(column, center, center);
     margin: 1em auto;
+    margin-top: 3em;
     span{
         display: block;
         font-size: 0.8rem;

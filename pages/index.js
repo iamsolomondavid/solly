@@ -11,14 +11,66 @@ import '../components/Fontawesome'
 
 // Import fontawesome component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useEffect, useState } from 'react'
+
 
 
 export default function Home() {
+  
+  const [currentSection, setCurrentSection] = useState(''); 
+
+  const resumeOn = () => {
+    const resumeOnBtn = document.querySelector('#resumeBtn');
+    const worksBtn = document.querySelector('#worksBtn');
+    const aboutBtn = document.querySelector('#aboutBtn');
+    const contactBtn = document.querySelector('#contactBtn');
+    resumeOnBtn.classList.remove('unselected');
+    worksBtn.classList.remove('selected');
+    aboutBtn.classList.remove('selected');
+    contactBtn.classList.remove('selected');
+  }
+  const workOn = () => {
+    const resumeBtn = document.querySelector('#resumeBtn');
+    const worksBtn = document.querySelector('#worksBtn');
+    const aboutBtn = document.querySelector('#aboutBtn');
+    const contactBtn = document.querySelector('#contactBtn');
+    resumeBtn.classList.add('unselected');
+    worksBtn.classList.add('selected');
+    aboutBtn.classList.remove('selected');
+    contactBtn.classList.remove('selected');
+  }
+  const aboutOn = () => {
+    const resumeBtn = document.querySelector('#resumeBtn');
+    const worksBtn = document.querySelector('#worksBtn');
+    const aboutBtn = document.querySelector('#aboutBtn');
+    const contactBtn = document.querySelector('#contactBtn');
+    resumeBtn.classList.add('unselected');
+    worksBtn.classList.remove('selected');
+    aboutBtn.classList.add('selected');
+    contactBtn.classList.remove('selected');
+  }
+  const contactOn = () => {
+    const resumeBtn = document.querySelector('#resumeBtn');
+    const worksBtn = document.querySelector('#worksBtn');
+    const aboutBtn = document.querySelector('#aboutBtn');
+    const contactBtn = document.querySelector('#contactBtn');
+    resumeBtn.classList.add('unselected');
+    worksBtn.classList.remove('selected');
+    aboutBtn.classList.remove('selected');
+    contactBtn.classList.add('selected');
+  }
+
+  const sectionNavigator = () => {
+
+  }
+  
+
+  
   return (
     <div className={home.home}>
       <Head>
         <title>Solly - Evolving Creative</title>
-        <meta name="author" content="Chukwubudo Ikechukwu Solomon David"/>
+        <meta name="author" content="Chukwubudo Ikechukwu Solomon David" />
         <meta name="description" content="Professional Portfolio website for Chukwubudo Ikechukwu" />
         <link rel="icon" href="/favicon.ico" type='image/x-icon' />
       </Head>
@@ -45,7 +97,7 @@ export default function Home() {
         </div>
       </div>
       {/* HEADER */}
-      <header>
+      <header id='header'>
         <div className={home.headerHeader}>
           <div></div>
           <h1>HELLO. <br/> I&apos;M SOLOMON<br/> DAVID</h1>
@@ -64,8 +116,18 @@ export default function Home() {
       </header>
       {/* MAIN */}
       <main>
+        {/* SIDEBAR */}
+        <div className={home.navigatorWrapper} id='navigator'>
+          {/* <p>Select /</p> */}
+          <div>
+            <span id='resumeBtn' onClick={resumeOn}>RESUME&apos;</span>
+            <span id='worksBtn' onClick={workOn}>WORKS</span>
+            <span id='aboutBtn' onClick={aboutOn}>ABOUT</span>
+            <span id='contactBtn' onClick={contactOn}>CONTACT</span>
+          </div>
+        </div>
         {/* RESUME */}
-        <section className={home.resume}>
+        <section className={home.resume} id='resume'>
           <div className={home.resumeWrapper}>
             <div className={home.resumeHeader}>
               <div></div>
@@ -139,9 +201,9 @@ export default function Home() {
           </div>
         </section>
         {/* WORKS */}
-        <section></section>
+        <section className={home.work}></section>
         {/* ABOUT */}
-        <section className={home.about}>
+        <section className={home.about} id='about'>
           <div className={home.aboutWrapper}>
             <div className={home.aboutHeader}>
               <div></div>
@@ -176,7 +238,7 @@ export default function Home() {
           </div>
         </section>
         {/* CONTACT */}
-        <section className={home.contact}>
+        <section className={home.contact} id='contact'>
           <div className={home.contactWrapper}>
             <div className={home.contactHeader}>
               <div></div>
