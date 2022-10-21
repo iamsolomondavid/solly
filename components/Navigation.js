@@ -16,6 +16,7 @@ const Navigation = () => {
                 width={94}
                 height={27}
                 layout='fixed'
+                alt=''
             />
         </div>
         <Hamburger />

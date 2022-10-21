@@ -275,7 +275,7 @@ export default function Home() {
               <h2>CONTACT ME</h2>
             </div>
             <div className={home.contactBody}>
-              <h4><b>x</b> &nbsp; <span>LET'S TALK</span></h4>
+              <h4><b>x</b> &nbsp; <span>LET&apos;S TALK</span></h4>
               <p>
               Job offers? You have an idea and  you think i&apos;d be a good part of it? Or you just want to connect? Let&apos;s talk! I&apos;m at a stage in my life where i&apos;m really looking to build my network, build new connections and help build a community (or communities). 
               </p>
