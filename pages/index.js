@@ -67,7 +67,7 @@ export default function Home() {
     resumeBtn.classList.add('unselected');
     resume.classList.add('unselected');
     worksBtn.classList.remove('selected');
-    worksBtn.classList.remove('selected');
+    works.classList.remove('selected');
     aboutBtn.classList.add('selected');
     about.classList.add('selected');
     contactBtn.classList.remove('selected');
@@ -231,7 +231,9 @@ export default function Home() {
           </div>
         </section>
         {/* WORKS */}
-        <section className={home.work} id='works'></section>
+        <section className={home.work} id='works'>
+
+        </section>
         {/* ABOUT */}
         <section className={home.about} id='about'>
           <div className={home.aboutWrapper}>
