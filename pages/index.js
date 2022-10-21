@@ -24,45 +24,75 @@ export default function Home() {
     const worksBtn = document.querySelector('#worksBtn');
     const aboutBtn = document.querySelector('#aboutBtn');
     const contactBtn = document.querySelector('#contactBtn');
+    const resume = document.querySelector('#resume');
+    const works = document.querySelector('#works');
+    const about = document.querySelector('#about');
+    const contact = document.querySelector('#contact');
     resumeOnBtn.classList.remove('unselected');
+    resume.classList.remove('unselected');
     worksBtn.classList.remove('selected');
+    works.classList.remove('selected');
     aboutBtn.classList.remove('selected');
+    about.classList.remove('selected');
     contactBtn.classList.remove('selected');
+    contact.classList.remove('selected');
   }
   const workOn = () => {
     const resumeBtn = document.querySelector('#resumeBtn');
     const worksBtn = document.querySelector('#worksBtn');
     const aboutBtn = document.querySelector('#aboutBtn');
     const contactBtn = document.querySelector('#contactBtn');
+    const resume = document.querySelector('#resume');
+    const works = document.querySelector('#works');
+    const about = document.querySelector('#about');
+    const contact = document.querySelector('#contact');
     resumeBtn.classList.add('unselected');
+    resume.classList.add('unselected');
     worksBtn.classList.add('selected');
+    works.classList.add('selected');
     aboutBtn.classList.remove('selected');
+    about.classList.remove('selected');
     contactBtn.classList.remove('selected');
+    contact.classList.remove('selected');
   }
   const aboutOn = () => {
     const resumeBtn = document.querySelector('#resumeBtn');
     const worksBtn = document.querySelector('#worksBtn');
     const aboutBtn = document.querySelector('#aboutBtn');
     const contactBtn = document.querySelector('#contactBtn');
+    const resume = document.querySelector('#resume');
+    const works = document.querySelector('#works');
+    const about = document.querySelector('#about');
+    const contact = document.querySelector('#contact');
     resumeBtn.classList.add('unselected');
+    resume.classList.add('unselected');
+    worksBtn.classList.remove('selected');
     worksBtn.classList.remove('selected');
     aboutBtn.classList.add('selected');
+    about.classList.add('selected');
     contactBtn.classList.remove('selected');
+    contact.classList.remove('selected'); 
   }
   const contactOn = () => {
     const resumeBtn = document.querySelector('#resumeBtn');
     const worksBtn = document.querySelector('#worksBtn');
     const aboutBtn = document.querySelector('#aboutBtn');
     const contactBtn = document.querySelector('#contactBtn');
+    const resume = document.querySelector('#resume');
+    const works = document.querySelector('#works');
+    const about = document.querySelector('#about');
+    const contact = document.querySelector('#contact');
     resumeBtn.classList.add('unselected');
+    resume.classList.add('unselected');
     worksBtn.classList.remove('selected');
+    works.classList.remove('selected');
     aboutBtn.classList.remove('selected');
+    about.classList.remove('selected');
     contactBtn.classList.add('selected');
+    contact.classList.add('selected');
   }
 
-  const sectionNavigator = () => {
-
-  }
+  
   
 
   
@@ -201,7 +231,7 @@ export default function Home() {
           </div>
         </section>
         {/* WORKS */}
-        <section className={home.work}></section>
+        <section className={home.work} id='works'></section>
         {/* ABOUT */}
         <section className={home.about} id='about'>
           <div className={home.aboutWrapper}>
