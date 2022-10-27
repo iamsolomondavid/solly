@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 // import components
 import Hamburger from './Hamburger';
+import Menu from './Menu';
 
 // import styles
 import nav from '../styles/Components.module.scss';
@@ -10,6 +11,7 @@ import nav from '../styles/Components.module.scss';
 const Navigation = () => {
   return (
     <div className={nav.navigation} id="navigation">
+      <div className={nav.navWrapper}>
         <div className={nav.logo}>
             <Image 
                 src='/images/logo.webp'
@@ -20,6 +22,8 @@ const Navigation = () => {
             />
         </div>
         <Hamburger />
+        <Menu />
+      </div>
     </div>
   )
 }

@@ -11,13 +11,12 @@ import '../components/Fontawesome'
 
 // Import fontawesome component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useEffect, useState } from 'react'
 
 
 
 export default function Home() {
   
-  const [currentSection, setCurrentSection] = useState(''); 
+
 
   const resumeOn = () => {
     const resumeOnBtn = document.querySelector('#resumeBtn');
@@ -91,9 +90,6 @@ export default function Home() {
     contactBtn.classList.add('selected');
     contact.classList.add('selected');
   }
-
-  
-  
 
   
   return (
@@ -227,7 +223,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={home.resumeDownload}>DOWNLOAD RESUME&apos; <FontAwesomeIcon className={home.arrowLong} icon="fa-solid fa-right-long" /></div>
+            <Link href="resume.pdf">
+              <a className={home.resumeDownload} download='resume'>DOWNLOAD RESUME&apos; <FontAwesomeIcon className={home.arrowLong} icon="fa-solid fa-right-long" /></a>
+            </Link>
           </div>
         </section>
         {/* WORKS */}

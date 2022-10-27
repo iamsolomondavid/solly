@@ -16,6 +16,11 @@ body {
   box-sizing: border-box;
 }
 
+header, main, footer{
+  &.makeOpaque{
+    filter: blur(7.5px);
+  }
+}
 
 #overlap {
   display: none;
@@ -105,5 +110,49 @@ body {
     display: block;
   }
 }
-
+#navigation {
+  &.ham-clicked {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+  }
+}
+#hamburger{
+  &.ham-active {
+    position: relative;
+    z-index: 300;
+    div{
+      margin: 0;
+      width: 1.3rem;
+      height: 3px;
+      border-radius: 5px;
+      transition: all 0.3s linear;
+    }
+    #dot-two{
+      display: none;
+    }
+    #dot-one{
+      margin-top: 0;
+      transform: rotate(-45deg);
+    }
+    #dot-three{
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+#menu-container{
+  &.menu-active{
+    @include flexStyle(column, center, center);
+  }
+}
+#menu{
+  &.menu-open{
+    clip-path: circle(80vh at 90% 0%);
+    -webkit-clip-path: circle(80vh at 90% 0%);
+  }
+}
 

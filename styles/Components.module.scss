@@ -3,9 +3,18 @@
 
 // Navigation
 .navigation {
-    @include flexStyle(row, space-between, center);
-    @include container(90%);
-    padding: 1rem 0;
+    @include flexStyle(row, center, center);
+    @include container(100%);
+    .navWrapper{
+        @include container(90%);
+        padding: 1rem 0;
+        @include flexStyle(row, space-between, center);
+    }
+}
+
+// Logo
+.logo{
+    z-index: 300;
 }
 
 // Hamburger
@@ -13,12 +22,138 @@
     width: fit-content;
     @include flexStyle(row, center, center);
     margin-top: -4px;
+    z-index: 300;
     div{
+        transition: all 0.2s linear;
         width: 0.35rem;
         height: 0.35rem;
         border-radius: 50%;
         background-color: color(primary-2);
         margin: 0.1em;  
+    }
+}
+
+// menu
+.menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+    height: 50vh;
+    width: 80%;
+    background-color: color(primary-3);
+    border-radius: 35px;
+    padding: 2em;
+    overflow: hidden;
+    clip-path: circle(0px at 90% 0%);
+    -webkit-clip-path: circle(0 at 90% 0%);
+    transition: clip-path 0.5s ease-out !important;
+    .bubbleOne{
+        position: absolute;
+        width: 8em;
+        height: 8em;
+        background-color: color(secondary-1);
+        top: 10%;
+        right: -3em;
+        opacity: 0.5;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    .bubbleTwo{
+        position: absolute;
+        width: 6em;
+        height: 6em;
+        background-color: color(secondary-2);
+        top: 38vh;
+        left: -1em;
+        opacity: 0.5;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    .menuWrapper {
+        width: 100%;
+        height: 100%;
+        @include flexStyle(column, space-between, center);
+        h4{
+            text-align: left;
+            opacity: 0.8;
+            font-family: font(secondary);
+            padding: 1em 0;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        div{
+            width: 100%;
+        }
+        .menuNav{
+            height: 50%;
+            h4{
+                padding-top: 0;
+            }
+            ul{
+                height: inherit;
+                margin-top: 0.8em;
+                padding-left: 1em;
+                @include flexStyle(column, space-between, flex-start);
+                a{
+                   text-decoration: none;
+                   font-weight: bold;
+                   font-size: 1rem;
+                   color: color(accent);
+                   font-weight: 600;
+                   transform: scale(1);
+                   transition: transform 0.3s linear;
+                   &:hover{
+                    transform: scale(1.1);
+                    color: color(secondary-1);
+                   }
+                   span{
+                    font-family: font(accent);
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    color: color(accent);
+                    opacity: 0.8;
+                   }
+                }
+            }
+        }
+        .connect{
+            height: 50%;
+            width: 100%;
+            @include flexStyle(column, center, flex-start);
+            div{
+                width: 100%;
+                @include flexStyle(row wrap, space-between, center);
+                a{
+                    width: 45%;
+                    background-color: #ffffff;
+                    text-align: center;
+                    border-radius: 5px;
+                    margin-top: 0.5em;
+                    padding: 0.2em;
+                    transition: all .3s linear;
+                    transform: scale(1);
+                    &:hover{
+                        background-color: color(secondary-2);
+                        transform: scale(1.1);
+                        color: #ffffff !important;
+                    }
+                    &:nth-child(1){
+                        color: #36B7C9;
+                    }
+                    &:nth-child(2){
+                        color: #34B034;
+                    }
+                    &:nth-child(3){
+                        color: color(accent);
+                    }
+                    &:nth-child(4){
+                        color: color(primary-2);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -46,3 +181,4 @@
         font-weight: 600;
     }
 }
+
