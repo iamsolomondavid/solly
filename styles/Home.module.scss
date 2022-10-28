@@ -292,8 +292,108 @@
       }
     }
     .work{
-      height: 100vh;
       width: 100%;
+      background-image: url('../public/images/resume.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      .workHeader{
+        @include container(85%);
+        position: relative;
+        margin: 1rem auto;
+        div{
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          background-color: color(secondary-1);
+        }
+        h2{
+          font-family: font(secondary);
+          font-size: 1.5rem;
+          color: color(accent);
+          position: relative;
+          top: 1rem;
+          left: 2rem;
+          display: inline;
+          z-index: 1;
+        }
+      }
+      .workSubHeader{
+        @include container(70%);
+        color: color(accent);
+        padding-top: 2rem;
+        b{
+          font-family: font(secondary);
+          font-weight: bold;
+          text-align: center;
+        }
+        span{
+          font-size: 0.8rem;
+          font-weight: bold;
+        }
+      }
+      .projects {
+        width: 100%;
+        @include flexStyle(column, center, center);
+        margin: 2rem 0;
+        .projectOne{
+          div{
+            width: 100%;
+            height: 35vh;
+            background-color: color(secondary-1);
+            border-radius: 30px;
+            p{
+              position: relative;
+              top: 80%;
+              left: 10%;
+              width: fit-content;
+              font-weight: 700;
+              font-size: 1rem;
+            }
+          }
+          span{
+            display: block;
+            @include container(80%);
+            padding: 2em 0;
+            font-size: 0.8rem;
+            font-weight: 500;
+          }
+        }
+        .projectTwo{
+          @extend .projectOne;
+          div{
+            background-color: color(secondary-2);
+          }
+        }
+        .projectThree{
+          @extend .projectOne;
+        }
+        .projectFour{
+          @extend .projectOne;
+          div{
+            background-color: color(secondary-2);
+          }
+        }
+        .projectFive{
+          @extend .projectOne;
+        }
+      }
+      .seemore{
+        @include flexStyle(row, flex-start, center);
+        @include container(80%);
+        padding: 3rem 0 0 0 ;
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-decoration: none !important;
+        color: color(accent);
+        .arrowLong{
+          padding-left: 0.5em;
+          color: color(secondary-1);
+        }
+      }
     }
     .about{
       @extend .resume;

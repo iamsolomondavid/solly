@@ -230,7 +230,46 @@ export default function Home() {
         </section>
         {/* WORKS */}
         <section className={home.work} id='works'>
-
+          <div className={home.workHeader}>
+            <div></div>
+            <h2>WORKS</h2>
+          </div>
+          <p className={home.workSubHeader}><b>x</b> &nbsp; <span>FEATURED PROJECTS</span></p>
+          <div className={home.projects}>
+            <div className={home.projectOne}>
+              <div>
+                <p>HTML . CSS . JS</p>
+              </div>
+              <span><b>Pinevents -</b>Ticketing platform for tech events of a fictional tech brand called <b>Pine</b></span>
+            </div>
+            <div className={home.projectTwo}>
+              <div>
+                <p>JAVASCRIPT</p>
+              </div>
+              <span><b>Pinevents -</b>Ticketing platform for tech events of a fictional tech brand called <b>Pine</b></span>
+            </div>
+            <div className={home.projectThree}>
+              <div>
+                <p>REACT</p>
+              </div>
+              <span><b>Pinevents -</b>Ticketing platform for tech events of a fictional tech brand called <b>Pine</b></span>
+            </div>
+            <div className={home.projectFour}>
+              <div>
+                <p>NEXTJS</p>
+              </div>
+              <span><b>Pinevents -</b>Ticketing platform for tech events of a fictional tech brand called <b>Pine</b></span>
+            </div>
+            <div className={home.projectFive}>
+              <div>
+                <p>UI DESIGN</p>
+              </div>
+              <span><b>Pinevents -</b>Ticketing platform for tech events of a fictional tech brand called <b>Pine</b></span>
+            </div>
+          </div>
+          <Link href="#">
+            <a className={home.seemore}>SEE MORE? GO TO SHOWROOM <FontAwesomeIcon className={home.arrowLong} icon="fa-solid fa-right-long" /></a>
+          </Link>
         </section>
         {/* ABOUT */}
         <section className={home.about} id='about'>
