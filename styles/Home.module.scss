@@ -279,7 +279,8 @@
         .resumeDownload{
           @include flexStyle(row, flex-start, center);
           @include container(80%);
-          padding: 3rem 0 0 0 ;
+          margin: 3rem auto;
+          margin-bottom: 0px;
           font-size: 0.7rem;
           font-weight: bold;
           text-decoration: none !important;
@@ -384,7 +385,8 @@
       .seemore{
         @include flexStyle(row, flex-start, center);
         @include container(80%);
-        padding: 3rem 0 0 0 ;
+        margin: 3rem auto;
+        margin-bottom: 0px;
         font-size: 0.7rem;
         font-weight: bold;
         text-decoration: none !important;
