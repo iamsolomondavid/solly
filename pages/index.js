@@ -386,7 +386,7 @@ export default function Home() {
                 <div className={home.messageBox}>
                   <input type="text" placeholder='Your Name' id='sendername'/>
                   <input type="text" placeholder='Your Email or Whatsapp' id='sendercontact'/>
-                  <textarea name="user message" id="sendermessage" cols="30" rows="5" placeholder='Your Message' id='sendermessage'></textarea>
+                  <textarea name="user message" cols="30" rows="5" placeholder='Your Message' id='sendermessage'></textarea>
                   <p id='messageState'>Message sent successfully...</p>
                   <button onClick={sendToDB}>SEND</button>
                 </div>
