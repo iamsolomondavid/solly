@@ -20,7 +20,7 @@ const Menu = () => {
           <div className={menu.menuNav}>
             <h4>Menu</h4>
             <ul>
-              <Link href="#">
+              <Link href="/works">
                 <a>Works <span>showroom</span></a>
               </Link>
               <Link href="/resume.pdf">
@@ -32,16 +32,16 @@ const Menu = () => {
           <div className={menu.connect}>
             <h4>Get in touch</h4>
             <div>
-              <Link href="">
+              <Link href="https://twitter.com/AbsolutelyGr">
                 <a><FontAwesomeIcon icon="fa-brands fa-twitter" /></a>
               </Link>
-              <Link href="">
+              <Link href="https://wa.me/message/FRU2NOHQDCL7O1">
                 <a><FontAwesomeIcon icon="fa-brands fa-whatsapp" /></a>
               </Link>
               <Link href="">
                 <a><FontAwesomeIcon icon="fa-brands fa-github" /></a>
               </Link>
-              <Link href="">
+              <Link href="mailto:sd.iamsolomondavid@gmail.com">
                 <a><FontAwesomeIcon icon="fa-solid fa-envelope" /></a>
               </Link>
             </div>

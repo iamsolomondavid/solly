@@ -8,7 +8,7 @@ config.autoAddCss = false; /* eslint-disable import/first */
 // import your icons
 import { faTwitter, faWhatsapp, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
-import { faArrowRight, faRightLong, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faRightLong, faEnvelope, faCloudMoon, faCloudSun } from '@fortawesome/free-solid-svg-icons';
 
 
 library.add(
@@ -18,6 +18,8 @@ library.add(
   faCopyright,
   faArrowRight,
   faRightLong,
-  faGithub
+  faGithub,
+  faCloudMoon,
+  faCloudSun
   // more icons go here
 );

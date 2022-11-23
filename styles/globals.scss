@@ -14,11 +14,36 @@ body {
   background-color: color(primary-1);
   color: color(accent);
   box-sizing: border-box;
+  &.dark-theme{
+    background-color: color(accent);
+    color: color(primary-1);
+  }
 }
 
 header, main, footer{
   &.makeOpaque{
     filter: blur(7.5px);
+  }
+}
+
+#nodesktop{
+  display: none;
+  @media screen and (min-width: 800px){
+      @include container(80%);
+      display: block;
+      height: 100vh;
+      h4{
+        font-size: 2rem;
+      }
+      p{
+        font-size: 0.9rem;
+        padding-top: 1rem;
+      }
+  }
+}
+#main, #header{
+  @media screen and (min-width: 800px) {
+    display: none;
   }
 }
 
@@ -47,6 +72,7 @@ header, main, footer{
     animation-fill-mode: forwards;
   }
 }
+
 @keyframes scrollDirection {
   from {top: 0;}
   to {top: 3rem; opacity: 0;}
@@ -91,11 +117,17 @@ header, main, footer{
   &.unselected {
     display: none;
   }
+  &.dark-theme{
+    color: color(primary-1);
+  }
 }
 #about {
   display: none;
   &.selected {
     display: block;
+  }
+  &.dark-theme{
+    color: color(primary-1);
   }
 }
 #works {
@@ -103,11 +135,17 @@ header, main, footer{
   &.selected {
     display: block;
   }
+  &.dark-theme{
+    color: color(primary-1);
+  }
 }
 #contact {
   display: none;
   &.selected {
     display: block;
+  }
+  &.dark-theme{
+    color: color(primary-1);
   }
 }
 #navigation {
@@ -156,3 +194,60 @@ header, main, footer{
   }
 }
 
+
+// Sends Message
+#messageState{
+  display: none;
+  &.sent{
+    display: block;
+  }
+}
+
+// Theme mode
+#light{
+  display: none;
+  color: color(primary-1);
+  &.dark-theme{
+    display: block !important;;
+  }
+}
+#dark{
+  display: block;
+  &.light-theme{
+    display: none !important;
+  }
+}
+#headertext{
+  &.dark-theme{
+    color: color(primary-1);
+  }
+}
+#headersubtext{
+  &.dark-theme{
+    color: color(primary-1);
+  }
+}
+#resumeheader{
+
+}
+#educationheader{
+
+}
+#frontendheader{
+
+}
+#frontendsubheader{
+
+}
+#toolsheader{
+
+}
+#toolssubheader{
+
+}
+#workexpheader{
+
+}
+#resumelink{
+
+}

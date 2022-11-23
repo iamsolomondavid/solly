@@ -9,12 +9,17 @@
         @include container(90%);
         padding: 1rem 0;
         @include flexStyle(row, space-between, center);
+        .themeUtility{
+           
+        }
     }
 }
 
 // Logo
 .logo{
     z-index: 300;
+    height: fit-content;
+    line-height: 0;
 }
 
 // Hamburger

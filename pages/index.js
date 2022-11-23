@@ -12,11 +12,40 @@ import '../components/Fontawesome'
 // Import fontawesome component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
+// Firebase
+import { doc, setDoc } from "firebase/firestore"; 
+import { getFirestore } from 'firebase/firestore';
+const db = getFirestore();
 
 export default function Home() {
   
 
+  const getSenderID = () => {
+    const sendername = document.querySelector('#sendername');
+    const sendercontact = document.querySelector('#sendercontact');
+    let senderID = sendername.value + sendercontact.value;
+    return senderID;
+  }
+  const sendToDB = async() => {
+    const sendername = document.querySelector('#sendername');
+    const sendercontact = document.querySelector('#sendercontact');
+    const sendermessage = document.querySelector('#sendermessage');
+    let senderID = await getSenderID();
+    try {
+      await setDoc(doc(db, "messages", `${senderID}`), {
+        name: `${sendername.value}`,
+        contact: `${sendercontact.value}`,
+        message: `${sendermessage.value}`
+      }).then(() => {
+        const messageState = document.querySelector('#messageState');
+        messageState.classList.add('sent');
+        setTimeout(() => messageState.classList.remove('sent'), 3000);
+      });
+    } catch (error) {
+      console.log(error);
+      alert('Error: ' + error.message + 'Try sending again later.');
+    }
+  }
 
   const resumeOn = () => {
     const resumeOnBtn = document.querySelector('#resumeBtn');
@@ -100,6 +129,10 @@ export default function Home() {
         <meta name="description" content="Professional Portfolio website for Chukwubudo Ikechukwu" />
         <link rel="icon" href="/favicon.ico" type='image/x-icon' />
       </Head>
+      <div id='nodesktop'>
+          <h4>Work in Progress..</h4>
+          <p>Sorry, this site is only available on mobile devices, currently improving it for desktop.</p>
+      </div>
       {/* OVERLAP */}
       <div className={home.overlap} id='overlap'>
         <div className={home.animateOne} id="overlap-animate-one">
@@ -126,14 +159,14 @@ export default function Home() {
       <header id='header'>
         <div className={home.headerHeader}>
           <div></div>
-          <h1>HELLO. <br/> I&apos;M SOLOMON<br/> DAVID</h1>
+          <h1 id='headertext'>HELLO. <br/> I&apos;M SOLOMON<br/> DAVID</h1>
         </div>
         <div className={home.headerBody}>
           <p>a Frontend Web Developer, UI designer
             and Visual(Brand) Identity Designer 
             in Lagos, Nigeria.</p>
           <p>
-          I believe in Minimalistic - yet creative - designs;  <span>My creative design process involves abstracting the ambiguity in ideas and converting them into designs (websites, UI designs or Visual Identity Designs) that are both functional and aesthetically pleasing. Giving users a seamless digital experience.</span>
+          I believe in Minimalistic - yet creative - designs;  <span id='headersubtext'>My creative design process involves abstracting the ambiguity in ideas and converting them into designs (websites, UI designs or Visual Identity Designs) that are both functional and aesthetically pleasing. Giving users a seamless digital experience.</span>
           </p>
         </div>
         <div id='scrollDirection'>
@@ -141,7 +174,7 @@ export default function Home() {
         </div>
       </header>
       {/* MAIN */}
-      <main>
+      <main id='main'>
         {/* SIDEBAR */}
         <div className={home.navigatorWrapper} id='navigator'>
           {/* <p>Select /</p> */}
@@ -157,11 +190,11 @@ export default function Home() {
           <div className={home.resumeWrapper}>
             <div className={home.resumeHeader}>
               <div></div>
-              <h2>RESUME&apos;</h2>
+              <h2 id='resumeheader'>RESUME&apos;</h2>
             </div>
             <div className={home.resumeBody}>
               <div className={home.education}>
-                <p className={home.educationHeader}><b>x</b> &nbsp; <span>EDUCATION HISTORY</span></p>
+                <p className={home.educationHeader} id='educationheader'><b>x</b> &nbsp; <span>EDUCATION HISTORY</span></p>
                 <div className={home.educationBody}>
                   <div>
                     <li>University of Portharcourt</li>
@@ -175,8 +208,8 @@ export default function Home() {
                 </div>
               </div>
               <div className={home.frontend}>
-                <p className={home.frontendHeader}><b>x</b> &nbsp; <span>FRONTEND SKILLS</span></p>
-                <small>Languages/Technologies</small>
+                <p className={home.frontendHeader} id='frontendheader'><b>x</b> &nbsp; <span>FRONTEND SKILLS</span></p>
+                <small id='frontendsubheader'>Languages/Technologies</small>
                 <div className={home.frontendBody}>
                   <li>HTML & CSS</li>
                   <li>SASS</li>
@@ -188,8 +221,8 @@ export default function Home() {
                 </div>
               </div>
               <div className={home.tools}>
-                <p className={home.toolsHeader}><b>x</b> &nbsp; <span>TOOLS EXPERTISE</span></p>
-                <small>Tools/Softwares</small>
+                <p className={home.toolsHeader} id="toolsheader"><b>x</b> &nbsp; <span>TOOLS EXPERTISE</span></p>
+                <small id='toolssubheader'>Tools/Softwares</small>
                 <div className={home.toolsBody}>
                   <li>VSCODE</li>
                   <li>FIGMA</li>
@@ -200,7 +233,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={home.workexp}>
-                <p className={home.workexpHeader}><b>x</b> &nbsp; <span>WORK EXPERIENCE</span></p>
+                <p className={home.workexpHeader} id='workexpheader'><b>x</b> &nbsp; <span>WORK EXPERIENCE</span></p>
                 <div className={home.workexpBody}>
                   <div className={home.workdets}>
                     <div>
@@ -223,14 +256,28 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Link href="resume.pdf">
+            <Link href="resume.pdf" id='resumelink'>
               <a className={home.resumeDownload} download='resume'>DOWNLOAD RESUME&apos; <FontAwesomeIcon className={home.arrowLong} icon="fa-solid fa-right-long" /></a>
             </Link>
           </div>
         </section>
         {/* WORKS */}
         <section className={home.work} id='works'>
-          <div className={home.workHeader}>
+          <div className={home.workinprogress}>
+            <h4>Work in Progress..</h4>
+            <p>I'm currently working on improving this part of the site, will be deployed soon. check back later.</p>
+            <div className={home.person} id='person'>
+              <Image 
+                src='/images/work.png'
+                width={123}
+                height={295}
+                layout='fixed'
+                alt=''
+              />
+            </div>
+            
+          </div>
+          {/* <div className={home.workHeader}>
             <div></div>
             <h2>WORKS</h2>
           </div>
@@ -269,7 +316,7 @@ export default function Home() {
           </div>
           <Link href="#">
             <a className={home.seemore}>SEE MORE? GO TO SHOWROOM <FontAwesomeIcon className={home.arrowLong} icon="fa-solid fa-right-long" /></a>
-          </Link>
+          </Link> */}
         </section>
         {/* ABOUT */}
         <section className={home.about} id='about'>
@@ -321,13 +368,13 @@ export default function Home() {
               <div className={home.handles}>
                 <h6><b>x</b> &nbsp;dm me via:</h6>
                 <span>
-                  <Link href="#">
-                    <a><FontAwesomeIcon icon="fa-brands fa-twitter" /></a>
+                  <Link href="https://twitter.com/AbsolutelyGr">
+                    <a target='_blank'><FontAwesomeIcon icon="fa-brands fa-twitter" /></a>
                   </Link>
-                  <Link href="#">
+                  <Link href="https://wa.me/message/FRU2NOHQDCL7O1">
                     <a><FontAwesomeIcon icon="fa-brands fa-whatsapp" /></a>
                   </Link>
-                  <Link href="#">
+                  <Link href="mailto:sd.iamsolomondavid@gmail.com">
                     <a><FontAwesomeIcon icon="fa-solid fa-envelope" /></a>
                   </Link>
                 </span>
@@ -335,10 +382,11 @@ export default function Home() {
               <div className={home.message}>
                 <h6><b>x</b> &nbsp;or send me a line here</h6>
                 <div className={home.messageBox}>
-                  <input type="text" placeholder='Your Name'/>
-                  <input type="text" placeholder='Your Email or Whatsapp'/>
-                  <textarea name="user message" id="" cols="30" rows="5" placeholder='Your Message'></textarea>
-                  <button>SEND</button>
+                  <input type="text" placeholder='Your Name' id='sendername'/>
+                  <input type="text" placeholder='Your Email or Whatsapp' id='sendercontact'/>
+                  <textarea name="user message" id="sendermessage" cols="30" rows="5" placeholder='Your Message' id='sendermessage'></textarea>
+                  <p id='messageState'>Message sent successfully...</p>
+                  <button onClick={sendToDB}>SEND</button>
                 </div>
               </div>
             </div>

@@ -297,6 +297,22 @@
       background-image: url('../public/images/resume.webp');
       background-size: cover;
       background-repeat: no-repeat;
+      .workinprogress{
+        @include container(80%);
+        height: 100vh;
+        transform: translateY(20%);
+        h4{
+          font-size: 2rem;
+        }
+        p{
+          font-size: 0.9rem;
+          padding-top: 1rem;
+        }
+        .person{
+          width: fit-content;
+          margin: 1rem auto 0 auto;
+        }
+      }
       .workHeader{
         @include container(85%);
         position: relative;
