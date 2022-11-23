@@ -39,6 +39,9 @@ export default function Home() {
       }).then(() => {
         const messageState = document.querySelector('#messageState');
         messageState.classList.add('sent');
+        sendername.value = '';
+        sendercontact.value = '';
+        sendermessage.value = '';
         setTimeout(() => messageState.classList.remove('sent'), 3000);
       });
     } catch (error) {
