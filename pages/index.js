@@ -141,6 +141,7 @@ export default function Home() {
             width={150}
             height={200}
             layout="fixed"
+            alt=''
           />
         </div>
         <div className={home.animateTwo} id="overlap-animate-two">
@@ -149,6 +150,7 @@ export default function Home() {
             width={250}
             height={44}
             layout="fixed"
+            alt=''
           />
         </div>
         <div className={home.overlapFooter}>
