@@ -265,7 +265,7 @@ export default function Home() {
         <section className={home.work} id='works'>
           <div className={home.workinprogress}>
             <h4>Work in Progress..</h4>
-            <p>I'm currently working on improving this part of the site, will be deployed soon. check back later.</p>
+            <p>I&apos;m currently working on improving this part of the site, will be deployed soon. check back later.</p>
             <div className={home.person} id='person'>
               <Image 
                 src='/images/work.png'
